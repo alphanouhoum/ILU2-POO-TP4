@@ -40,6 +40,7 @@ public class ScenarioTest {
 		marche[0] = etalSanglier;
 		marche[1] = etalPoisson;
 		
+
 		
 
 	}

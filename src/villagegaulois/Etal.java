@@ -21,5 +21,6 @@ public class Etal <P extends Produit>{
 	public int getQuantite() {
 		return quantite;
 	}
+	
 
 }
