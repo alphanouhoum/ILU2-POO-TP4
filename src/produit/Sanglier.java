@@ -5,16 +5,22 @@ import personnages.Gaulois;
 public class Sanglier extends Produit {
 	private int poids;
 	private Gaulois chasseur;
-	private String nom;
 	
-	public Sanglier(int poids, Gaulois chasseur, String nom) {
+	public Sanglier(int poids, Gaulois chasseur) {
 		super("sanglier", Unite.KILOGRAMME);
 		this.poids = poids;
-		this.nom = nom;
 		this.chasseur = chasseur;
 	}
 	
-	public void decrireProduit() {
-		System.out.println("sanglier de "+ this.poids +" "+Unite.KILOGRAMME + " chassé par "+ this.chasseur.getNom());
+	@Override
+	public String decrireProduit() {
+		StringBuilder string = new StringBuilder();
+		string.append("sanglier de "+ this.poids +" "+Unite.KILOGRAMME + " chassé par "+ this.chasseur.getNom()+ ".");
+		return string.toString();
+	}
+
+	@Override
+	public int calculerPrix(int prix) {
+		return poids/prix;
 	}
 }

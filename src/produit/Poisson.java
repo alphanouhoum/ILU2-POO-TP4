@@ -1,17 +1,24 @@
 package produit;
 
+
 public class Poisson extends Produit {
 	private String date;
-	private String nom;
 	
-	public Poisson(String nom, String date) {
-		super("sanglier", Unite.PIECE);
+	public Poisson(String date) {
+		super("poisson", Unite.PIECE);
 		this.date = date;
-		this.nom = nom;
 	}
 	
-	public void decrireProduit() {
-		System.out.println("poisson pêchés "+this.date);
+	@Override
+	public String decrireProduit() {
+		StringBuilder string = new StringBuilder();
+		string.append("poisson pêchés "+this.date + ".");
+		return string.toString();
+	}
+
+	@Override
+	public int calculerPrix(int prix) {
+		return prix;
 	}
 
 }
